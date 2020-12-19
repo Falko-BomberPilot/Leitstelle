@@ -97,6 +97,8 @@
       "guid": "7c1e734a-fa3a-49ae-9e9d-6c386b176497",
       "reactionFields": [],
       "embedfields": [],
+      "saveToVariable": "",
+      "saveToVariableType": "temp",
       "outputs": [
         {
           "label": "next response",
@@ -116,14 +118,14 @@
       "rtype": "Message",
       "rsubtype": "Send Embed",
       "formdata": [
-        "allgemeiner-bottest",
+        "willkommen",
         "0099FF",
         "Willkommen auf dem Herr Busfahrer Discord Server!",
         "",
         "",
         "",
         "",
-        "Willkommen <@${tempVars.newuser.id}> auf dem offiziellen Discord-Server von Herr Busfahrer Discord Server! Bevor du richtig loslegst, verifiziere dich noch schnell in #verifizieren. Viel Spaß hier!",
+        "Willkommen <@${tempVars.newuser.id}> auf dem offiziellen Discord-Server von Herr Busfahrer! Bevor du richtig loslegst, verifiziere dich noch eben in #verifizieren, indem du die Regeln durchliest und auf die Nachricht des Bots reagierst, um Zugriff auf den gesamten Server zu haben. Viel Spaß hier!",
         "",
         "",
         "",
@@ -166,8 +168,8 @@
           "id": "7c1e734a-fa3a-49ae-9e9d-6c386b176497"
         }
       ],
-      "x": 541,
-      "y": 104,
+      "x": 519,
+      "y": 97,
       "rtype": "Message",
       "rsubtype": "Send Embed",
       "formdata": [
@@ -209,8 +211,6 @@
       "guid": "8d3f1bcc-9217-42f1-8705-ca26f363fa1d",
       "reactionFields": [],
       "embedfields": [],
-      "saveToVariable": "",
-      "saveToVariableType": "temp",
       "outputs": [
         {
           "label": "next response",

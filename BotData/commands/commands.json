@@ -44,10 +44,56 @@
           "name": "show info",
           "category": "Message",
           "type": "Send Message",
-          "channelname": "${dbsVars.DefaultChannel.id}",
+          "channelname": "${dbsVars.CommandChannel.id}",
           "messagetext": "Command Author: ${dbsVars.CommandAuthor.displayName}\nTagged author: <@${dbsVars.CommandAuthor.id}>\nYou can insert more values by clicking the \"Insert Variable\" button next to this field!",
           "savetovariable": "",
           "savetovariabletype": "temp"
+        }
+      ]
+    },
+    {
+      "name": "buswitz",
+      "actions": [
+        {
+          "name": "GenerateRandomNumber",
+          "category": "Variable",
+          "type": "Generate Random Number",
+          "varname": "Number",
+          "min": "1",
+          "max": "18",
+          "savevartype": "temp"
+        },
+        {
+          "name": "GetResponseFromBot",
+          "category": "Spreadsheet",
+          "type": "Get Row",
+          "trueActions": [
+            {
+              "name": "SendResponse",
+              "category": "Message",
+              "type": "Send Embed",
+              "channelname": "${dbsVars.CommandChannel.id}",
+              "color": "00CCFF",
+              "title": "Buswitz:",
+              "url": "",
+              "authorname": "",
+              "authorimageurl": "",
+              "authorlink": "",
+              "description": "${tempVars.Response.Response}",
+              "thumbnail": "",
+              "image": "",
+              "footer": "",
+              "timestamp": "false",
+              "savetovariable": "",
+              "savetovariabletype": "temp"
+            }
+          ],
+          "falseActions": [],
+          "selectedsheet": "Witzte - Tabellenblatt1.csv",
+          "colheader": "Number",
+          "colval": "${tempVars.Number}",
+          "rowvariable": "Response",
+          "savevartype": "temp"
         }
       ]
     }

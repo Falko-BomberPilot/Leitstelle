@@ -48,8 +48,6 @@
           "inline": "true"
         }
       ],
-      "saveToVariable": "",
-      "saveToVariableType": "temp",
       "outputs": [
         {
           "label": "next response",
@@ -105,6 +103,8 @@
       "guid": "5053a44d-4a5e-460a-974d-da0cc07aac7c",
       "reactionFields": [],
       "embedfields": [],
+      "saveToVariable": "",
+      "saveToVariableType": "temp",
       "outputs": [
         {
           "label": "next response",
@@ -122,7 +122,7 @@
       "rtype": "Message",
       "rsubtype": "Send Message",
       "formdata": [
-        "${dbsVars.DefaultChannel.id}",
+        "${dbsVars.CommandChannel.id}",
         "Command Author: ${dbsVars.CommandAuthor.displayName}\nTagged author: <@${dbsVars.CommandAuthor.id}>\nYou can insert more values by clicking the \"Insert Variable\" button next to this field!",
         "",
         "temp"
@@ -130,6 +130,158 @@
       "formnames": [
         "channelName",
         "messageText",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "command",
+      "name": "buswitz",
+      "guid": "7156b7e3-eacc-4683-b176-d22fad7d2a9b",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "1010cb3c-aa1a-4e3a-944e-1d78ae77f0c6"
+          ]
+        }
+      ],
+      "x": 148,
+      "y": 461
+    },
+    {
+      "type": "response",
+      "name": "GenerateRandomNumber",
+      "guid": "1010cb3c-aa1a-4e3a-944e-1d78ae77f0c6",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "592173c3-3bbc-4f70-8bac-bd373bbecedd"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "7156b7e3-eacc-4683-b176-d22fad7d2a9b"
+        }
+      ],
+      "x": 347,
+      "y": 450,
+      "rtype": "Variable",
+      "rsubtype": "Generate Random Number",
+      "formdata": [
+        "Number",
+        "1",
+        "18",
+        "temp"
+      ],
+      "formnames": [
+        "varname",
+        "min",
+        "max",
+        "saveVarType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "GetResponseFromBot",
+      "guid": "592173c3-3bbc-4f70-8bac-bd373bbecedd",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "row is found",
+          "connections": [
+            "1b274de3-6cd1-4cb5-9793-aa4fc3e773cd"
+          ]
+        },
+        {
+          "label": "row not found",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "1010cb3c-aa1a-4e3a-944e-1d78ae77f0c6"
+        }
+      ],
+      "x": 552,
+      "y": 436,
+      "rtype": "Spreadsheet",
+      "rsubtype": "Get Row",
+      "formdata": [
+        "Witzte - Tabellenblatt1.csv",
+        "Number",
+        "${tempVars.Number}",
+        "Response",
+        "temp"
+      ],
+      "formnames": [
+        "selectedsheet",
+        "colheader",
+        "colval",
+        "rowvariable",
+        "saveVarType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "SendResponse",
+      "guid": "1b274de3-6cd1-4cb5-9793-aa4fc3e773cd",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "592173c3-3bbc-4f70-8bac-bd373bbecedd"
+        }
+      ],
+      "x": 743,
+      "y": 428,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "00CCFF",
+        "Buswitz:",
+        "",
+        "",
+        "",
+        "",
+        "${tempVars.Response.Response}",
+        "",
+        "",
+        "",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
         "saveToVariable",
         "saveToVariableType"
       ]
