@@ -1,0 +1,374 @@
+{
+  "nodes": [
+    {
+      "type": "event",
+      "name": "User Joins Server",
+      "guid": "49ebbc23-2903-4f05-ab69-bc9ecb4f067e",
+      "variables": {
+        "user": "newuser"
+      },
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "7c1e734a-fa3a-49ae-9e9d-6c386b176497"
+          ]
+        }
+      ],
+      "x": 99,
+      "y": 100,
+      "perms": []
+    },
+    {
+      "type": "event",
+      "name": "Any Message",
+      "guid": "49ebbc23-2903-4f05-ab69-bc9ecb4f8888",
+      "variables": {
+        "user": "msguser"
+      },
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": []
+        }
+      ],
+      "x": 101,
+      "y": 499,
+      "perms": []
+    },
+    {
+      "type": "event",
+      "name": "User Kicked",
+      "guid": "69ebbc23-2903-4f05-ab69-bc9ecb4f067e",
+      "variables": {
+        "user": "kickuser"
+      },
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "8d3f1bcc-9217-42f1-8705-ca26f363fa1d"
+          ]
+        }
+      ],
+      "x": 99,
+      "y": 250,
+      "perms": []
+    },
+    {
+      "type": "event",
+      "name": "User Banned",
+      "guid": "77ebbc23-2003-4f05-ab69-bc9ecb4f067e",
+      "variables": {
+        "user": "banuser"
+      },
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "9cb27f0c-74a4-41b1-8e90-b8405ad98934"
+          ]
+        }
+      ],
+      "x": 100,
+      "y": 375,
+      "perms": []
+    },
+    {
+      "type": "event",
+      "name": "Bot Initialization",
+      "guid": "0101bc23-2003-4f05-ab69-bc9ecb4f067e",
+      "variables": {},
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "50488c61-4f0b-4f63-a244-dbec58fe0b83"
+          ]
+        }
+      ],
+      "x": 100,
+      "y": 625,
+      "perms": []
+    },
+    {
+      "type": "response",
+      "name": "Hallo",
+      "guid": "7c1e734a-fa3a-49ae-9e9d-6c386b176497",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "cf224d76-fe7f-4698-8ae7-6fee559fd1be"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "49ebbc23-2903-4f05-ab69-bc9ecb4f067e"
+        }
+      ],
+      "x": 321,
+      "y": 100,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "allgemeiner-bottest",
+        "0099FF",
+        "Willkommen auf dem Herr Busfahrer Discord Server!",
+        "",
+        "",
+        "",
+        "",
+        "Willkommen <@${tempVars.newuser.id}> auf dem offiziellen Discord-Server von Herr Busfahrer Discord Server! Bevor du richtig loslegst, verifiziere dich noch schnell in #verifizieren. Viel Spaß hier!",
+        "",
+        "",
+        "",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "ModlOg",
+      "guid": "cf224d76-fe7f-4698-8ae7-6fee559fd1be",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "7c1e734a-fa3a-49ae-9e9d-6c386b176497"
+        }
+      ],
+      "x": 541,
+      "y": 104,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "mod-log",
+        "9DFF00",
+        "User gejoint",
+        "",
+        "",
+        "",
+        "",
+        "<@${tempVars.newuser.id}> ist dem Server beigetreten.\n\nUsername: ${dbsVars.DefaultChannel.displayName}\nID: ${dbsVars.DefaultChannel.id}\nTag: ${dbsVars.DefaultChannel.user.tag}",
+        "",
+        "",
+        "",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "KickMessage",
+      "guid": "8d3f1bcc-9217-42f1-8705-ca26f363fa1d",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "69ebbc23-2903-4f05-ab69-bc9ecb4f067e"
+        }
+      ],
+      "x": 325,
+      "y": 234,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "mod-log",
+        "FFAE00",
+        "Nutzer wurde gekickt",
+        "",
+        "",
+        "",
+        "",
+        "<@${dbsVars.DefaultChannel.id}> wurde von diesem Server gekickt.\n\nLetzte Nachricht: \"${dbsVars.DefaultChannel.lastMessage",
+        "",
+        "",
+        "",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "Banned",
+      "guid": "9cb27f0c-74a4-41b1-8e90-b8405ad98934",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "77ebbc23-2003-4f05-ab69-bc9ecb4f067e"
+        }
+      ],
+      "x": 322,
+      "y": 373,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "mod-log",
+        "FFAE00",
+        "Nutzer wurde gebannt",
+        "",
+        "",
+        "",
+        "",
+        "<@${tempVars.newuser.id}> wurde von diesem Server gebannt.\n\nLetzte Nachricht: \"${dbsVars.DefaultChannel.lastMessage}\"",
+        "",
+        "",
+        "",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "Start",
+      "guid": "50488c61-4f0b-4f63-a244-dbec58fe0b83",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "0101bc23-2003-4f05-ab69-bc9ecb4f067e"
+        }
+      ],
+      "x": 337,
+      "y": 627,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "mod-log",
+        "6AFF00",
+        "Das System wurde gestartet.",
+        "",
+        "",
+        "",
+        "",
+        "Das System wurde gestartet, der Bot ist nun online.",
+        "",
+        "",
+        "",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    }
+  ]
+}

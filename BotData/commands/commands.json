@@ -1,0 +1,55 @@
+{
+  "command": [
+    {
+      "name": "hilfe",
+      "perms": [],
+      "actions": [
+        {
+          "name": "help menu",
+          "category": "Message",
+          "type": "Send Embed",
+          "fields": [
+            {
+              "name": "? hilfe",
+              "value": "Zeigt dieses Menü",
+              "inline": "true"
+            },
+            {
+              "name": "? commands",
+              "value": "Zeigt die vollständige Commandliste",
+              "inline": "true"
+            }
+          ],
+          "channelname": "${dbsVars.CommandChannel.id}",
+          "color": "0099FF",
+          "title": "Hilfe",
+          "url": "",
+          "authorname": "Leitstelle",
+          "authorimageurl": "",
+          "authorlink": "",
+          "description": "Der Leitstellen-Bot ist der offizielle Bot für den Herr Busfahrer Discord Server. Mit benutzerdefinierten Commands, Automoderation und verschiedenen Spielchen bringt dieser Bot den Server weiter nach vorne. Unten sehen Sie den Grundcommand.",
+          "thumbnail": "",
+          "image": "",
+          "footer": "",
+          "timestamp": "false",
+          "savetovariable": "",
+          "savetovariabletype": "temp"
+        }
+      ]
+    },
+    {
+      "name": "info",
+      "actions": [
+        {
+          "name": "show info",
+          "category": "Message",
+          "type": "Send Message",
+          "channelname": "${dbsVars.DefaultChannel.id}",
+          "messagetext": "Command Author: ${dbsVars.CommandAuthor.displayName}\nTagged author: <@${dbsVars.CommandAuthor.id}>\nYou can insert more values by clicking the \"Insert Variable\" button next to this field!",
+          "savetovariable": "",
+          "savetovariabletype": "temp"
+        }
+      ]
+    }
+  ]
+}

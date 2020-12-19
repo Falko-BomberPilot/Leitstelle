@@ -1,0 +1,141 @@
+{
+  "command": [
+    {
+      "name": "User Joins Server",
+      "perms": [],
+      "actions": [
+        {
+          "name": "Hallo",
+          "category": "Message",
+          "type": "Send Embed",
+          "channelname": "allgemeiner-bottest",
+          "color": "0099FF",
+          "title": "Willkommen auf dem Herr Busfahrer Discord Server!",
+          "url": "",
+          "authorname": "",
+          "authorimageurl": "",
+          "authorlink": "",
+          "description": "Willkommen <@${tempVars.newuser.id}> auf dem offiziellen Discord-Server von Herr Busfahrer Discord Server! Bevor du richtig loslegst, verifiziere dich noch schnell in #verifizieren. Viel Spaß hier!",
+          "thumbnail": "",
+          "image": "",
+          "footer": "",
+          "timestamp": "false",
+          "savetovariable": "",
+          "savetovariabletype": "temp"
+        },
+        {
+          "name": "ModlOg",
+          "category": "Message",
+          "type": "Send Embed",
+          "channelname": "mod-log",
+          "color": "9DFF00",
+          "title": "User gejoint",
+          "url": "",
+          "authorname": "",
+          "authorimageurl": "",
+          "authorlink": "",
+          "description": "<@${tempVars.newuser.id}> ist dem Server beigetreten.\n\nUsername: ${dbsVars.DefaultChannel.displayName}\nID: ${dbsVars.DefaultChannel.id}\nTag: ${dbsVars.DefaultChannel.user.tag}",
+          "thumbnail": "",
+          "image": "",
+          "footer": "",
+          "timestamp": "false",
+          "savetovariable": "",
+          "savetovariabletype": "temp"
+        }
+      ],
+      "var": {
+        "user": "newuser"
+      }
+    },
+    {
+      "name": "Any Message",
+      "perms": [],
+      "actions": [],
+      "var": {
+        "user": "msguser"
+      }
+    },
+    {
+      "name": "User Kicked",
+      "perms": [],
+      "actions": [
+        {
+          "name": "KickMessage",
+          "category": "Message",
+          "type": "Send Embed",
+          "channelname": "mod-log",
+          "color": "FFAE00",
+          "title": "Nutzer wurde gekickt",
+          "url": "",
+          "authorname": "",
+          "authorimageurl": "",
+          "authorlink": "",
+          "description": "<@${dbsVars.DefaultChannel.id}> wurde von diesem Server gekickt.\n\nLetzte Nachricht: \"${dbsVars.DefaultChannel.lastMessage",
+          "thumbnail": "",
+          "image": "",
+          "footer": "",
+          "timestamp": "false",
+          "savetovariable": "",
+          "savetovariabletype": "temp"
+        }
+      ],
+      "var": {
+        "user": "kickuser"
+      }
+    },
+    {
+      "name": "User Banned",
+      "perms": [],
+      "actions": [
+        {
+          "name": "Banned",
+          "category": "Message",
+          "type": "Send Embed",
+          "channelname": "mod-log",
+          "color": "FFAE00",
+          "title": "Nutzer wurde gebannt",
+          "url": "",
+          "authorname": "",
+          "authorimageurl": "",
+          "authorlink": "",
+          "description": "<@${tempVars.newuser.id}> wurde von diesem Server gebannt.\n\nLetzte Nachricht: \"${dbsVars.DefaultChannel.lastMessage}\"",
+          "thumbnail": "",
+          "image": "",
+          "footer": "",
+          "timestamp": "false",
+          "savetovariable": "",
+          "savetovariabletype": "temp"
+        }
+      ],
+      "var": {
+        "user": "banuser"
+      }
+    },
+    {
+      "name": "Bot Initialization",
+      "perms": [],
+      "actions": [
+        {
+          "name": "Start",
+          "category": "Message",
+          "type": "Send Embed",
+          "channelname": "mod-log",
+          "color": "6AFF00",
+          "title": "Das System wurde gestartet.",
+          "url": "",
+          "authorname": "",
+          "authorimageurl": "",
+          "authorlink": "",
+          "description": "Das System wurde gestartet, der Bot ist nun online.",
+          "thumbnail": "",
+          "image": "",
+          "footer": "",
+          "timestamp": "false",
+          "savetovariable": "",
+          "savetovariabletype": "temp"
+        }
+      ],
+      "var": {}
+    }
+  ]
+}
